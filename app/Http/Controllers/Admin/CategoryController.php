@@ -44,7 +44,7 @@ class CategoryController extends Controller
         ]);
 
         $category = Category::create($request->all());
-        return redirect()->route('admin.categories.edit', $category)->with('info', 'La categoria se creó con éxito');
+        return redirect()->route('admin.categories.edit', $category)->with('message', 'La categoria se creó con éxito');
     }
 
     /**
@@ -84,7 +84,7 @@ class CategoryController extends Controller
         ]);
 
         $categoria->update($request->all());
-        return redirect()->route('admin.categories.edit', $categoria)->with('info', 'La categoria se actualizo con éxito');
+        return redirect()->route('admin.categories.edit', $categoria)->with('message', 'La categoria se actualizo con éxito');
     }
 
     /**

@@ -7,13 +7,7 @@
 @stop
 
 @section('content')
-    {{-- MENSAJE DE SESIÓN --}}
-    @if (session('info'))
-        <div class="alert alert-success">
-            <strong>{{ session('info') }}</strong>
-        </div>
-    @endif
-    {{-- /MENSAJE DE SESIÓN --}}
+
 
     <div class="card">
         <div class="card-body">
@@ -44,8 +38,15 @@
     </div>
 @stop
 
+@section('css')
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+@stop
+
 @section('js')
     <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3.0/jquery.stringtoslug.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
     <script>
     $(document).ready( function() {
         $("#name").stringToSlug({
@@ -54,5 +55,15 @@
             space: '-'
         });
     });
+
+    @if(Session::has('message'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.success("{{ session('message') }}");
+    @endif
     </script>
+
 @stop
