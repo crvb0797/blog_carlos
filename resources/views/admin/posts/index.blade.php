@@ -3,6 +3,11 @@
 @section('title', 'Carlos Blog')
 
 @section('content_header')
+
+    {{-- BOTON PARA CREAR UN NUEVO POST --}}
+        <a class="btn btn-secondary  float-right" href="{{ route('admin.posts.create') }}">Nuevo post</a>
+    {{-- /BOTON PARA CREAR UN NUEVO POST --}}
+
     <h1>Listado de post</h1>
 @stop
     
