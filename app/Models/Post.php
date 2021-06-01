@@ -13,6 +13,12 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $guarded = [
+        'id',
+        'create_at',
+        'updated_at'
+    ];
+
     /* RELACION 1:N INVERSA */
     public function user()
     {

@@ -150,6 +150,9 @@ return [
         'name' => 'nombre',
         'description' => 'descripción',
         'category' => 'categoria',
+        'tags' => 'etiquetas',
+        'extract' => 'resumen',
+        'body' => 'cuerpo del post'
     ],
 
 ];
