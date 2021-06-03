@@ -24,7 +24,7 @@
                                     <a class="btn btn-warning btn-sm" href="{{ route('admin.posts.edit', $post) }}">Editar</a>
                                 </td>
                                 <td width='10px'>
-                                    <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+                                    <form class="formulario-eliminar" action="{{ route('admin.posts.destroy', $post) }}" method="POST">
                                         @csrf
                                         @method('delete')
 
